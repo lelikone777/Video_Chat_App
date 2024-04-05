@@ -37,3 +37,14 @@ next-env.d.ts
 
 # idea
 /zoom-clone-main/
+/package-lock.json
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/jsLinters/eslint.xml
+/.idea/.gitignore
+/.idea/dbnavigator.xml
+/.idea/deployment.xml
+/.idea/discord.xml
+/.idea/modules.xml
+/.idea/prettier.xml
+/.idea/vcs.xml
+/.idea/zoom-clone.iml
