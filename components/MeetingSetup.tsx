@@ -25,11 +25,11 @@ const MeetingSetup = ({
 
   const call = useCall();
 
-  // if (!call) {
-  //   throw new Error(
-  //     "useStreamCall must be used within a StreamCall component.",
-  //   );
-  // }
+  if (!call) {
+    throw new Error(
+      "useStreamCall must be used within a StreamCall component.",
+    );
+  }
 
   // https://getstream.io/video/docs/react/ui-cookbook/replacing-call-controls/
   const [isMicCamToggled, setIsMicCamToggled] = useState(false);
