@@ -30,11 +30,14 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
   const getNoCallsMessage = () => {
     switch (type) {
       case "ended":
-        return "No Previous Calls";
+        // return "No Previous Calls";
+        return "Нет звонков в истории";
       case "upcoming":
-        return "No Upcoming Calls";
+        // return "No Upcoming Calls";
+        return "Нет запланированных звонков";
       case "recordings":
-        return "No Recordings";
+        // return "No Recordings";
+        return "Нет записей";
       default:
         return "";
     }
@@ -79,7 +82,8 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
             title={
               (meeting as Call).state?.custom?.description ||
               (meeting as CallRecording).filename?.substring(0, 20) ||
-              "No Description"
+              // "No Description"
+              "Нет описания"
             }
             date={
               (meeting as Call).state?.startsAt?.toLocaleString() ||
