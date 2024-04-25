@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Репозиторий Видео Звонки (Video Calls)
 
-## Getting Started
+Этот репозиторий содержит учебный проект - приложение Видео Звонки, который является полным клоном популярного приложения Zoom. Проект разработан как часть моего обучения веб-разработке.
 
-First, run the development server:
+## Особенности проекта:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Реализация основных функций видеоконференций, включая видеопоток, аудиосвязь, чат, возможность обмена экраном и записи соих разговоров.
+- Поддержка создания конференций с несколькими участниками и управление участниками конференции.
+- Аутентификация пользователей и доступ к конференциям с использованием различных методов аутентификации.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Технологии:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Frontend**: HTML, CSS, JavaScript, React.js, Next.js, tailwind Css, GetStream.io.
+- **Аутентификация**: Clerk
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Примечание:
 
-## Learn More
+Этот проект разработан исключительно в учебных целях и может быть использован как отправная точка для изучения различных аспектов веб-разработки, включая работу с видеопотоком и аудио, реализацию WebSocket-соединений и аутентификацию пользователей.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Video Calls Repository
 
-## Deploy on Vercel
+This repository contains an educational project - the Video Calls application, which is a complete clone of the popular Zoom application. The project is developed as part of my web development learning journey.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Features:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Implementation of basic video conferencing functions, including video streaming, audio communication, chat, screen sharing, and recording conversations.
+- Support for creating multi-participant conferences and managing conference participants.
+- User authentication and access to conferences using various authentication methods.
+
+## Technologies:
+
+- **Frontend**: HTML, CSS, JavaScript, React.js, Next.js, tailwind Css, GetStream.io.
+- **Authentication**: Clerk
+
+## Note:
+
+This project is developed solely for educational purposes and can be used as a starting point for learning various aspects of web development, including working with video and audio streams, implementing WebSocket connections, and user authentication.
+
+
+![2024-04-26_02-59-43](https://github.com/lelikone777/Video_Chat_App/assets/56075795/2bd7ea10-1d3a-412c-b1f6-76cbdb68310f)
+
+![2024-04-26_03-04-53](https://github.com/lelikone777/Video_Chat_App/assets/56075795/70f169f9-ece7-49f6-87d2-ff3602802f3c)

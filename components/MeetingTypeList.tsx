@@ -75,7 +75,7 @@ const MeetingTypeList = () => {
         img="/icons/add-meeting.svg"
         // title="New Meeting"
         // description="Start an instant meeting"
-        title="Новый Групповой Звонок"
+        title="Начать Групповой Звонок"
         description="Начать Встречу"
         handleClick={() => setMeetingState("isInstantMeeting")}
       />
@@ -111,7 +111,8 @@ const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === "isScheduleMeeting"}
           onClose={() => setMeetingState(undefined)}
-          title="Create Meeting"
+          // title="Create Meeting"
+          title="Создание Группового Звонка"
           handleClick={createMeeting}
         >
           <div className="flex flex-col gap-2.5">
@@ -164,7 +165,8 @@ const MeetingTypeList = () => {
       <MeetingModal
         isOpen={meetingState === "isJoiningMeeting"}
         onClose={() => setMeetingState(undefined)}
-        title="Type the link here"
+        // title="Type the link here"
+        title="Введите ссылку здесь"
         className="text-center"
         // buttonText="Join Meeting"
         buttonText="Присоединиться к Групповому Звонку"
