@@ -2,28 +2,33 @@ export const sidebarLinks = [
   {
     imgURL: "/icons/Home.svg",
     route: "/",
-    label: "Home",
+    // label: "Home",
+    label: "На главную",
   },
 
   {
     imgURL: "/icons/upcoming.svg",
     route: "/upcoming",
-    label: "Upcoming",
+    // label: "Upcoming",
+    label: "События",
   },
   {
     imgURL: "/icons/previous.svg",
     route: "/previous",
-    label: "Previous",
+    // label: "Previous",
+    label: "История",
   },
   {
     imgURL: "/icons/Video.svg",
     route: "/recordings",
-    label: "Recordings",
+    // label: "Recordings",
+    label: "Записи",
   },
   {
     imgURL: "/icons/add-personal.svg",
     route: "/personal-room",
-    label: "Personal Room",
+    // label: "Personal Room",
+    label: "Личный кабинет",
   },
 ];
 

@@ -47,14 +47,16 @@ const MeetingSetup = ({
   if (callTimeNotArrived)
     return (
       <Alert
-        title={`Your Meeting has not started yet. It is scheduled for ${callStartsAt.toLocaleString()}`}
+        // title={`Your Meeting has not started yet. It is scheduled for ${callStartsAt.toLocaleString()}`}
+        title={`Ваше Звонок еще не начался. Он запланирован на ${callStartsAt.toLocaleString()}`}
       />
     );
 
   if (callHasEnded)
     return (
       <Alert
-        title="The call has been ended by the host"
+        // title="The call has been ended by the host"
+        title="Звонок завершен Администратором"
         iconUrl="/icons/call-ended.svg"
       />
     );
@@ -70,7 +72,8 @@ const MeetingSetup = ({
             checked={isMicCamToggled}
             onChange={(e) => setIsMicCamToggled(e.target.checked)}
           />
-          Join with mic and camera off
+          {/* Join with mic and camera off */}
+          присоединиться без камеры и микрофона
         </label>
         <DeviceSettings />
       </div>
@@ -82,7 +85,8 @@ const MeetingSetup = ({
           setIsSetupComplete(true);
         }}
       >
-        Join meeting
+        {/* Join meeting */}
+        Присоединиться
       </Button>
     </div>
   );

@@ -60,7 +60,8 @@ const MeetingModal = ({
               />
             )}{" "}
             &nbsp;
-            {buttonText || "Schedule Meeting"}
+            {/* {buttonText || "Schedule Meeting"} */}
+            {buttonText || "Запланировать звонок"}
           </Button>
         </div>
       </DialogContent>

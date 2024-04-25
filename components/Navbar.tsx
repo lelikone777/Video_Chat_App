@@ -16,7 +16,11 @@ const Navbar = () => {
           className="max-sm:size-10"
         />
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          YOOM
+          {/* YOOM */}
+          Видео Звонки
+        </p>
+        <p className="text-[18px] font-extrabold text-white max-sm:hidden">
+          Пэт проект Алексея Калинина для видео звонков ©
         </p>
       </Link>
       <div className="flex-between gap-5">

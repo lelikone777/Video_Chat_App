@@ -7,12 +7,15 @@ import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ruRU } from "@clerk/localizations";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "YOOM",
-  description: "Video calling App",
+  // title: "YOOM",
+  // description: "Video calling App",
+  title: "Видео Звонки",
+  description: "Приложение для Видео Звонков",
   icons: {
     icon: "/icons/logo.svg",
   },
@@ -37,6 +40,7 @@ export default function RootLayout({
             colorInputText: "#fff",
           },
         }}
+        localization={ruRU}
       >
         <body className={`${inter.className} bg-dark-2`}>
           <Toaster />
