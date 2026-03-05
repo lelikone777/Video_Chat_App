@@ -7,12 +7,12 @@ import { useRouter } from "next/navigation";
 import HomeCard from "./HomeCard";
 import MeetingModal from "./MeetingModal";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
-import { useUser } from "@clerk/nextjs";
 import Loader from "./Loader";
 import { Textarea } from "./ui/textarea";
 import ReactDatePicker from "react-datepicker";
 import { useToast } from "./ui/use-toast";
 import { Input } from "./ui/input";
+import { useAppUser } from "@/hooks/useAppUser";
 
 const initialValues = {
   dateTime: new Date(),
@@ -28,7 +28,7 @@ const MeetingTypeList = () => {
   const [values, setValues] = useState(initialValues);
   const [callDetail, setCallDetail] = useState<Call>();
   const client = useStreamVideoClient();
-  const { user } = useUser();
+  const { user } = useAppUser();
   const { toast } = useToast();
 
   const createMeeting = async () => {
@@ -65,7 +65,14 @@ const MeetingTypeList = () => {
     }
   };
 
-  if (!client || !user) return <Loader />;
+  if (!user) return <Loader />;
+  if (!client)
+    return (
+      <div className="rounded-xl bg-dark-1 p-6 text-white">
+        Stream video is not configured. Set `NEXT_PUBLIC_STREAM_API_KEY` and
+        `STREAM_SECRET_KEY` in `.env.local`.
+      </div>
+    );
 
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetail?.id}`;
 

@@ -1,12 +1,12 @@
 "use client";
 
-import { useUser } from "@clerk/nextjs";
 import { useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
 
 import { useGetCallById } from "@/hooks/useGetCallById";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { useAppUser } from "@/hooks/useAppUser";
 
 const Table = ({
   title,
@@ -29,7 +29,7 @@ const Table = ({
 
 const PersonalRoom = () => {
   const router = useRouter();
-  const { user } = useUser();
+  const { user } = useAppUser();
   const client = useStreamVideoClient();
   const { toast } = useToast();
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useUser } from "@clerk/nextjs";
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk";
 import { useParams } from "next/navigation";
 import { Loader } from "lucide-react";
@@ -10,10 +9,11 @@ import { useGetCallById } from "@/hooks/useGetCallById";
 import Alert from "@/components/Alert";
 import MeetingSetup from "@/components/MeetingSetup";
 import MeetingRoom from "@/components/MeetingRoom";
+import { useAppUser } from "@/hooks/useAppUser";
 
 const MeetingPage = () => {
-  const { id } = useParams();
-  const { isLoaded, user } = useUser();
+  const { id } = useParams<{ id: string }>();
+  const { isLoaded, user } = useAppUser();
   const { call, isCallLoading } = useGetCallById(id);
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 
