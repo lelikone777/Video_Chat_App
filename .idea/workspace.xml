@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12290733-0538-4e75-ab64-d7332178147f" name="Changes" comment="Environment Variables">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/stream.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/actions/stream.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-in/[[...sign-in]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-in/[[...sign-in]]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-up]]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/sign-up/[[...sign-up]]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(root)/(home)/personal-room/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/(home)/personal-room/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(root)/meeting/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(root)/meeting/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MeetingSetup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/MeetingSetup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MeetingTypeList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/MeetingTypeList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks/useAppUser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/hooks/useAppUser.ts" afterDir="false" />
+    <list default="true" id="12290733-0538-4e75-ab64-d7332178147f" name="Changes" comment="clerk">
+      <change beforePath="$PROJECT_DIR$/components/AuthControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/AuthControls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/MeetingModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/MeetingModal.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/providers/StreamClientProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/providers/StreamClientProvider.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="88" />
+    <option name="cachedIndexableFilesCount" value="92" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,6 +110,7 @@
       <workItem from="1772928043064" duration="989000" />
       <workItem from="1772963716480" duration="6583000" />
       <workItem from="1772983962830" duration="1111000" />
+      <workItem from="1772985312225" duration="2944000" />
     </task>
     <task id="LOCAL-00001" summary="Environment Variables">
       <option name="closed" value="true" />
@@ -128,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772980844550</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="clerk">
+      <option name="closed" value="true" />
+      <created>1772985576287</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772985576287</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="logo &amp; favicon" />
     <MESSAGE value="Environment Variables" />
-    <option name="LAST_COMMIT_MESSAGE" value="Environment Variables" />
+    <MESSAGE value="clerk" />
+    <option name="LAST_COMMIT_MESSAGE" value="clerk" />
   </component>
 </project>
