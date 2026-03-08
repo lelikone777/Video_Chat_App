@@ -4,6 +4,7 @@ import { useState } from "react";
 import { StreamCall, StreamTheme } from "@stream-io/video-react-sdk";
 import { useParams } from "next/navigation";
 import { Loader } from "lucide-react";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
 
 import { useGetCallById } from "@/hooks/useGetCallById";
 import Alert from "@/components/Alert";
@@ -18,6 +19,19 @@ const MeetingPage = () => {
   const [isSetupComplete, setIsSetupComplete] = useState(false);
 
   if (!isLoaded || isCallLoading) return <Loader />;
+
+  if (!user)
+    return (
+      <main className="flex h-screen w-full flex-col items-center justify-center gap-4 text-white">
+        <p className="text-center text-xl font-semibold">
+          Для участия в видеозвонке нужно войти в аккаунт.
+        </p>
+        <div className="flex items-center gap-2">
+          <SignInButton mode="modal" />
+          <SignUpButton mode="modal" />
+        </div>
+      </main>
+    );
 
   if (!call)
     return (

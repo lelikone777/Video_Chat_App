@@ -13,6 +13,7 @@ import ReactDatePicker from "react-datepicker";
 import { useToast } from "./ui/use-toast";
 import { Input } from "./ui/input";
 import { useAppUser } from "@/hooks/useAppUser";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
 
 const initialValues = {
   dateTime: new Date(),
@@ -65,7 +66,16 @@ const MeetingTypeList = () => {
     }
   };
 
-  if (!user) return <Loader />;
+  if (!user)
+    return (
+      <div className="rounded-xl bg-dark-1 p-6 text-white">
+        <p className="text-lg font-semibold">Видеозвонки доступны после входа.</p>
+        <div className="mt-4 flex items-center gap-2">
+          <SignInButton mode="modal" />
+          <SignUpButton mode="modal" />
+        </div>
+      </div>
+    );
   if (!client)
     return (
       <div className="rounded-xl bg-dark-1 p-6 text-white">

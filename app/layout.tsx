@@ -1,12 +1,16 @@
 ﻿import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import {
+  ClerkProvider,
+} from "@clerk/nextjs";
 
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { metadataBase } from "@/lib/seo";
+import AuthControls from "@/components/AuthControls";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,8 +54,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning className={`${inter.className} bg-dark-2`}>
-        <Toaster />
-        {children}
+        <ClerkProvider>
+          <AuthControls />
+          <Toaster />
+          {children}
+        </ClerkProvider>
       </body>
     </html>
   );

@@ -7,6 +7,7 @@ import { useGetCallById } from "@/hooks/useGetCallById";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 import { useAppUser } from "@/hooks/useAppUser";
+import { SignInButton, SignUpButton } from "@clerk/nextjs";
 
 const Table = ({
   title,
@@ -36,6 +37,19 @@ const PersonalRoom = () => {
   const meetingId = user?.id;
 
   const { call } = useGetCallById(meetingId!);
+
+  if (!user)
+    return (
+      <section className="flex size-full flex-col items-center justify-center gap-4 text-white">
+        <h1 className="text-xl font-bold">
+          Личная комната доступна только авторизованным пользователям.
+        </h1>
+        <div className="flex items-center gap-2">
+          <SignInButton mode="modal" />
+          <SignUpButton mode="modal" />
+        </div>
+      </section>
+    );
 
   const startRoom = async () => {
     if (!client || !user) return;

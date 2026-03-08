@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SignIn } from "@clerk/nextjs";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
@@ -11,11 +11,8 @@ export const metadata: Metadata = createPageMetadata({
 
 const SignInPage = () => {
   return (
-    <main className="flex h-screen w-full flex-col items-center justify-center gap-4 text-white">
-      <p>Auth is temporarily disabled.</p>
-      <Link href="/" className="text-blue-1 underline">
-        Go to home
-      </Link>
+    <main className="flex h-screen w-full items-center justify-center">
+      <SignIn />
     </main>
   );
 };

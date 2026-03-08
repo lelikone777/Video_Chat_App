@@ -1,4 +1,6 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import Image from "next/image";
 import Link from "next/link";
 
 import MobileNav from "./MobileNav";
@@ -19,10 +21,6 @@ const Navbar = () => {
         </p>
       </Link>
       <div className="flex-between gap-5">
-        <div className="rounded-full bg-blue-1 px-3 py-1 text-sm font-semibold text-white">
-          Demo
-        </div>
-
         <MobileNav />
       </div>
     </nav>
@@ -30,4 +28,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

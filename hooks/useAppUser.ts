@@ -1,8 +1,17 @@
-import { APP_DEMO_USER } from "@/lib/demo-user";
+import { useUser } from "@clerk/nextjs";
 
 export const useAppUser = () => {
+  const { isLoaded, user } = useUser();
+
   return {
-    isLoaded: true,
-    user: APP_DEMO_USER,
+    isLoaded,
+    user: user
+      ? {
+          id: user.id,
+          username:
+            user.username || user.fullName || user.primaryEmailAddress?.emailAddress || user.id,
+          imageUrl: user.imageUrl,
+        }
+      : null,
   };
 };
