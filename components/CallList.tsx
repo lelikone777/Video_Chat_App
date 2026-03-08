@@ -5,6 +5,7 @@ import { Call, CallRecording } from "@stream-io/video-react-sdk";
 import Loader from "./Loader";
 import { useGetCalls } from "@/hooks/useGetCalls";
 import MeetingCard from "./MeetingCard";
+import HistoryCallCard from "./HistoryCallCard";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -66,6 +67,37 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
   const calls = getCalls();
   const noCallsMessage = getNoCallsMessage();
 
+  if (type === "ended") {
+    return (
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+        {endedCalls && endedCalls.length > 0 ? (
+          [...endedCalls]
+            .sort((a, b) => {
+              const endedA = a.state.endedAt?.getTime() ?? 0;
+              const endedB = b.state.endedAt?.getTime() ?? 0;
+              return endedB - endedA;
+            })
+            .map((meeting) => (
+              <HistoryCallCard
+                key={meeting.id}
+                callId={meeting.id}
+                title={meeting.state?.custom?.description || "Call without description"}
+                startedAt={meeting.state.startedAt ?? meeting.state.startsAt}
+                endedAt={meeting.state.endedAt}
+                participants={meeting.state.members.map((member) => ({
+                  id: member.user.id,
+                  name: member.user.name || member.user.id,
+                  image: member.user.image,
+                }))}
+              />
+            ))
+        ) : (
+          <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
       {calls && calls.length > 0 ? (
@@ -73,11 +105,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
           <MeetingCard
             key={(meeting as Call).id}
             icon={
-              type === "ended"
-                ? "/icons/previous.svg"
-                : type === "upcoming"
-                  ? "/icons/upcoming.svg"
-                  : "/icons/recordings.svg"
+              type === "upcoming" ? "/icons/upcoming.svg" : "/icons/recordings.svg"
             }
             title={
               (meeting as Call).state?.custom?.description ||
@@ -89,7 +117,7 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
               (meeting as Call).state?.startsAt?.toLocaleString() ||
               (meeting as CallRecording).start_time?.toLocaleString()
             }
-            isPreviousMeeting={type === "ended"}
+            isPreviousMeeting={false}
             link={
               type === "recordings"
                 ? (meeting as CallRecording).url
