@@ -1,12 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CallControls,
   CallParticipantsList,
+  RecordCallButton,
   CallStatsButton,
   CallingState,
   PaginatedGridLayout,
   SpeakerLayout,
+  useCall,
   useCallStateHooks,
 } from "@stream-io/video-react-sdk";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -22,6 +24,7 @@ import {
 import Loader from "./Loader";
 import EndCallButton from "./EndCallButton";
 import { cn } from "@/lib/utils";
+import { useToast } from "./ui/use-toast";
 
 type CallLayoutType = "grid" | "speaker-left" | "speaker-right";
 
@@ -31,10 +34,43 @@ const MeetingRoom = () => {
   const router = useRouter();
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
+  const call = useCall();
+  const { toast } = useToast();
   const { useCallCallingState } = useCallStateHooks();
 
   // for more detail about types of CallingState see: https://getstream.io/video/docs/react/ui-cookbook/ringing-call/#incoming-call-panel
   const callingState = useCallCallingState();
+
+  useEffect(() => {
+    if (!call) return;
+
+    const offStarted = call.on("call.recording_started", () => {
+      toast({
+        title: "Запись началась",
+        description: "Встреча записывается.",
+      });
+    });
+
+    const offStopped = call.on("call.recording_stopped", () => {
+      toast({
+        title: "Запись остановлена",
+        description: "Файл скоро появится в разделе записей.",
+      });
+    });
+
+    const offFailed = call.on("call.recording_failed", () => {
+      toast({
+        title: "Ошибка записи",
+        description: "Не удалось записать звонок. Проверьте настройки Stream.",
+      });
+    });
+
+    return () => {
+      offStarted();
+      offStopped();
+      offFailed();
+    };
+  }, [call, toast]);
 
   if (callingState !== CallingState.JOINED) return <Loader />;
 
@@ -66,6 +102,7 @@ const MeetingRoom = () => {
       {/* video layout and call controls */}
       <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
         <CallControls onLeave={() => router.push(`/`)} />
+        <RecordCallButton />
 
         <DropdownMenu>
           <div className="flex items-center">
