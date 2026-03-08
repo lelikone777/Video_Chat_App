@@ -125,6 +125,15 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
             }
             buttonIcon1={type === "recordings" ? "/icons/play.svg" : undefined}
             buttonText={type === "recordings" ? "Play" : "Start"}
+            participants={
+              type === "recordings"
+                ? []
+                : (meeting as Call).state.members.map((member) => ({
+                    id: member.user.id,
+                    name: member.user.name || member.user.id,
+                    image: member.user.image,
+                  }))
+            }
             handleClick={
               type === "recordings"
                 ? () => router.push(`${(meeting as CallRecording).url}`)
