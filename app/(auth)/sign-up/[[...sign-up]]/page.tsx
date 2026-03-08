@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Sign Up",
+  description: "Create a WaveMeet account and start hosting video meetings.",
+  path: "/sign-up",
+  noIndex: true,
+});
 
 const SignUpPage = () => {
   return (

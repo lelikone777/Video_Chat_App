@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Image from "next/image";
 import {
   Sheet,
@@ -29,12 +29,12 @@ const MobileNav = () => {
           <Link href="/" className="flex items-center gap-1">
             <Image
               src="/icons/logo.svg"
-              alt="logo"
+              alt="WaveMeet logo"
               width={32}
               height={32}
               className="max-sm:size-10"
             />
-            <p className="text-[26px] font-extrabold text-white">Yoom</p>
+            <p className="text-[26px] font-extrabold text-white">WaveMeet</p>
           </Link>
           <div className="flex h-[calc(100dvh-72px)] flex-col justify-between overflow-y-auto">
             <SheetClose asChild>
@@ -74,3 +74,4 @@ const MobileNav = () => {
 };
 
 export default MobileNav;
+

@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import CallList from "@/components/CallList";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Upcoming Meetings",
+  description: "View and manage your scheduled WaveMeet calls.",
+  path: "/upcoming",
+});
 
 const UpcomingPage = () => {
   return (

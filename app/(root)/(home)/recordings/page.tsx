@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import CallList from "@/components/CallList";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Recordings",
+  description: "Access recorded WaveMeet meetings from your library.",
+  path: "/recordings",
+});
 
 const PreviousPage = () => {
   return (

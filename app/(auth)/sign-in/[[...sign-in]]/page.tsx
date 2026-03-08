@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Sign In",
+  description: "Sign in to your WaveMeet account to join and manage meetings.",
+  path: "/sign-in",
+  noIndex: true,
+});
 
 const SignInPage = () => {
   return (

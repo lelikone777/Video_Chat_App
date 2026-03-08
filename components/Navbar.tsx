@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 
 import MobileNav from "./MobileNav";
@@ -11,15 +11,11 @@ const Navbar = () => {
           src="/icons/logo.svg"
           width={32}
           height={32}
-          alt="yoom logo"
+          alt="WaveMeet logo"
           className="max-sm:size-10"
         />
         <p className="text-[26px] font-extrabold text-white max-sm:hidden">
-          {/* YOOM */}
-          Видео Звонки
-        </p>
-        <p className="text-[18px] font-extrabold text-white max-sm:hidden">
-          Пэт проект Алексея Калинина для видео звонков ©
+          WaveMeet
         </p>
       </Link>
       <div className="flex-between gap-5">
@@ -34,3 +30,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

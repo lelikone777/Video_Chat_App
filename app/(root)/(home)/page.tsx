@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import MeetingTypeList from "@/components/MeetingTypeList";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Home",
+  description:
+    "Start instant calls, schedule meetings, and join video rooms in WaveMeet.",
+  path: "/",
+});
 
 const Home = () => {
   const now = new Date();
